@@ -1,20 +1,20 @@
 <?php
-
+include("tail.php");
 foreach (new DirectoryIterator("/json") as $json) {
     if ($json->isFile() && !$json->isDot()) {
-        $file = json_decode(file_get_contents($json->getFileName()));
+        $file = json_decode(file_get_contents("/json/".$json->getFileName()));
         $jsonArray[$file->status][$file->filebase] = array(
                                                         "GDSA"=>$file->gdsa,
-                                                        "filedir"=>$file->filedir
+                                                        "filedir"=>$file->filedir,
                                                         "filebase"=>$file->filebase
                                                     );
         if($file->status == "uploading") {
-            $log = `tail -6 $file->logfile`;
-            preg_match("([0-9\%]+) \/\d+\.\d+\w\, (\d+.\d+\w+\/s)\, ([0-9dhms]+)", $log, $matches)
+            $log = tailCustom($file->logfile, 6);
+            preg_match("/([0-9\%]+) \/\d+\.\d+\w\, (\d+.\d+\w+\/s)\, ([0-9dhms]+)/", $log, $matches);
             if($matches)
             {
-                print_r($matches);
-                $jsonArray[$file->status][$file->filebase]["upload"] = array("percent"=>"", "rate"=>"", "time"=>""); 
+                //print_r($matches);
+                $jsonArray[$file->status][$file->filebase]["upload"] = array("percent"=> $matches[1], "rate"=>$matches[2], "time"=>$matches[3]); 
             }
             else {
                 $jsonArray[$file->status][$file->filebase]["upload"] = array("percent"=>"100%", "rate"=>"0MB/s", "time"=>"0s");
@@ -31,4 +31,4 @@ if(!is_array($jsonArray)){
         "done"=>null
     );
 }
-//echo json_encode($jsonArray);
+echo json_encode($jsonArray);

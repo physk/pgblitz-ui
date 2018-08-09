@@ -13,7 +13,7 @@
         <div class="row">
             <h1>Local Moves</h1>
             <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover table-dark">
+                <table id="moving" class="table table-striped table-bordered table-hover table-dark">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -53,7 +53,7 @@
         <div class="row">
             <h1>Uploads</h1>
             <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover table-dark">
+                <table id="uploading" class="table table-striped table-bordered table-hover table-dark">
                     <thead>
                         <tr>
                             <th>Filename</th>
@@ -93,7 +93,7 @@
         <div class="row">
             <h1>vfs waits</h1>
             <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover table-dark">
+                <table id="vfs" class="table table-striped table-bordered table-hover table-dark">
                     <thead>
                         <tr>
                             <th>Filename</th>
@@ -111,7 +111,7 @@
         <div class="row">
             <h1>Completed</h1>
             <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover table-dark">
+                <table id="done" class="table table-striped table-bordered table-hover table-dark">
                     <thead>
                         <tr>
                             <th>Filename</th>
