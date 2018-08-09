@@ -1,6 +1,6 @@
 $(document).ready(function() {
     function update() {
-        $.getJSON("https://pgblitz.mooncakemedia.co.uk/api.php", function(json){
+        $.getJSON("api.php", function(json){
                 var data = [];
                 data["moving"] = [];
                 data["uploading"] = [];
