@@ -1,5 +1,5 @@
 <?php
 
-echo phpinfo();
+echo "PGBlitz UI";
 
 ?>
