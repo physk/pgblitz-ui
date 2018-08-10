@@ -1,8 +1,10 @@
 <?php
 include("tail.php");
+include("datetime.php");
 foreach (new DirectoryIterator("/json") as $json) {
     if ($json->isFile() && !$json->isDot()) {
         $file = json_decode(file_get_contents("/json/".$json->getFileName()));
+        if($file->filebase == null) { continue; }
         $jsonArray[$file->status][$file->filebase] = array(
                                                         "GDSA"=>$file->gdsa,
                                                         "filedir"=>$file->filedir,
@@ -20,48 +22,41 @@ foreach (new DirectoryIterator("/json") as $json) {
             }
         }
         if($file->status == "done") {
-            $startime = new DateTime();
-            $startime->setTimestamp($file->starttime);
-            $endtime = new DateTime();
-            $endtime->setTimestamp($file->endtime);
-            $interval = $startime->diff($endtime);
-            $hours = $interval->format("H");
-            $min = $interval->format("i");
-            $sec = $interval->format("s");
-            $timetaken = "";
-            if($hours > 0) {
-                $timetaken .= $hours . "h ";
+            $timestart = $file->starttime;
+            $timeend = $file->endtime;
+            $res = $timeend - $timestart;
+            $timeobj = secondsToTime($res);
+            $timetaken = ""
+            if($timeobj["d"] > 0){
+                $timetaken .= $timeobj["d"] . "d";
             }
-            if($min > 0) {
-                $timetaken .= $min . "m ";
+            if($timeobj["h"] > 0){
+                $timetaken .= $timeobj["h"] . "h";
             }
-            $timetaken .= $sec . "s";
+            if($timeobj["m"] > 0){
+                $timetaken .= $timeobj["m"] . "m";
+            }
+            if($timeobj["s"] > 0){
+                $timetaken .= $timeobj["s"] . "s";
+            }
             $jsonArray[$file->status][$file->filebase]["timetaken"] = $timetaken;
         }
                                                     
     }
 }
-if(!is_array($jsonArray)){
-    $jsonArray = array(
-        "moving"=>"null",
-        "uploading"=>"null",
-        "vfs"=>"null",
-        "done"=>"null"
-    );
-}
-if(!is_array($jsonArray["moving"]))
+if(!isset($jsonArray["moving"]))
 {
     $jsonArray["moving"] = null;
 }
-if(!is_array($jsonArray["uploading"]))
+if(!isset($jsonArray["uploading"]))
 {
     $jsonArray["uploading"] = null;
 }
-if(!is_array($jsonArray["vfs"]))
+if(!isset($jsonArray["vfs"]))
 {
     $jsonArray["vfs"] = null;
 }
-if(!is_array($jsonArray["done"]))
+if(!isset($jsonArray["done"]))
 {
     $jsonArray["done"] = null;
 }
