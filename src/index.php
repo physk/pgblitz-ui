@@ -10,7 +10,7 @@
 </head>
 <!-- UI BY Bryde ツ -->
 <body>
-    <div class="container jumbotron">
+    <div class="container-responsive jumbotron">
         <div class="row">
             <h1>Local Moves</h1>
             <div class="table-responsive">
