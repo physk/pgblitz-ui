@@ -26,7 +26,7 @@ foreach (new DirectoryIterator("/json") as $json) {
             $timeend = $file->endtime;
             $res = $timeend - $timestart;
             $timeobj = secondsToTime($res);
-            $timetaken = ""
+            $timetaken = "";
             if($timeobj["d"] > 0){
                 $timetaken .= $timeobj["d"] . "d";
             }
