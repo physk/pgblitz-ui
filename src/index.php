@@ -26,7 +26,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="text-muted" colspan="4">No entries found.</td>
+                            <td class="text-muted" colspan="5">No entries found.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -49,7 +49,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="text-muted" colspan="5">No entries found.</td>
+                            <td class="text-muted" colspan="6">No entries found.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -88,7 +88,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="text-muted" colspan="3">No entries found.</td>
+                            <td class="text-muted" colspan="4">No entries found.</td>
                         </tr>
                     </tbody>
                 </table>

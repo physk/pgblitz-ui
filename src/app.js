@@ -26,7 +26,7 @@ $(document).ready(function() {
                             }
                             else {
                                 data["moving"].push( "<tr>" );
-                                data["moving"].push( "  <td class=\"text-muted\" colspan=\"4\">No entries found.</td>");
+                                data["moving"].push( "  <td class=\"text-muted\" colspan=\"5\">No entries found.</td>");
                                 data["moving"].push( "</tr>" );
                             }
                             break;
@@ -65,7 +65,7 @@ $(document).ready(function() {
                             }
                             else {
                                 data["uploading"].push( "<tr>" );
-                                data["uploading"].push( "  <td class=\"text-muted\" colspan=\"5\">No entries found.</td>");
+                                data["uploading"].push( "  <td class=\"text-muted\" colspan=\"6\">No entries found.</td>");
                                 data["uploading"].push( "</tr>" );
                             }
                             break;
@@ -99,7 +99,7 @@ $(document).ready(function() {
                             }
                             else {
                                 data["done"].push( "<tr>" );
-                                data["done"].push( "  <td class=\"text-muted\" colspan=\"3\">No entries found.</td>");
+                                data["done"].push( "  <td class=\"text-muted\" colspan=\"4\">No entries found.</td>");
                                 data["done"].push( "</tr>" );
                             }
                             break;
