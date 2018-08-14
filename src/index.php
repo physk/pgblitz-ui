@@ -19,6 +19,7 @@
                         <tr>
                             <th>File</th>
                             <th>Path</th>
+                            <th>Size</th>
                             <th>GDSA</th>
                             <th>Destination</th>
                         </tr>
@@ -41,7 +42,8 @@
                             <th>Filename</th>
                             <th>GDSA</th>
                             <th>Progress bar</th>
-                            <th>Speed</th>
+                            <th>Filesize</th>
+                            <th>Speed <div style="float: right;" id="#datarate"><span>0</span>M/s</div></th>
                             <th style="width:10%">Time Left</th>
                         </tr>
                     </thead>
@@ -79,6 +81,7 @@
                     <thead>
                         <tr>
                             <th>Filename</th>
+                            <th>Filesize</th>
                             <th>GDSA</th>
                             <th>Time spent</th>
                         </tr>
