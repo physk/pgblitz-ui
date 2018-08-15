@@ -41,7 +41,7 @@ $(document).ready(function() {
                                     data["uploading"].push( "  <td>" + array["filesize"] + "</td>");
                                     rexex = /([0-9+\.]+)([MK])/
                                     var matches = array.upload["rate"].match(rexex);
-                                    totalDatarate = totalDatarate + matches[1];
+                                    totalDatarate = Number(totalDatarate) + Number(matches[1]);
                                     var speed = Math.floor(matches[1])
                                     if(matches[2] == "M")
                                     {
@@ -111,7 +111,7 @@ $(document).ready(function() {
                     var $table = $('#' + i);
                     $table.find('tbody').empty().append(bodyContent); 
                 }
-                $('#datarate').find('span').text( totalDatarate );
+                $('#datarate').find('span').text( totalDatarate.toFixed(2) );
         });
     }
     update();
