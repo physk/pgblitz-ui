@@ -38,6 +38,7 @@ $(document).ready(function() {
                                     data["uploading"].push( "  <th>" + array["filebase"] + "</th>" );
                                     data["uploading"].push( "  <td>" + array["GDSA"] + "</td>" );
                                     data["uploading"].push( "  <td><div class=\"progress\"><div class=\"progress-bar progress-bar-striped progress-bar-animated bg-success\" role=\"progressbar\" aria-valuenow=\"" + array.upload["percent"] + "\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: " + array.upload["percent"] + "\">" + array.upload["percent"] + "</div></div></td>" );
+                                    data["uploading"].push( "  <td>" + array["filesize"] + "</td>");
                                     rexex = /([0-9+\.]+)([MK])/
                                     var matches = array.upload["rate"].match(rexex);
                                     totalDatarate = totalDatarate + matches[1];
@@ -58,7 +59,6 @@ $(document).ready(function() {
                                     else {
                                         data["uploading"].push( "  <td>" + array.upload["rate"] + " <i class=\"fas fa-dolly\" style=\"color:red; float:right;\"></i></td>" );
                                     }
-                                    data["uploading"].push( "  <td>" + array["filesize"] + "</td>");
                                     data["uploading"].push( "  <td>" + array.upload["time"] + "</td>" );
                                     data["uploading"].push( "</tr>" );
                                 });
