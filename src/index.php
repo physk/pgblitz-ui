@@ -43,7 +43,7 @@
                             <th>GDSA</th>
                             <th>Progress bar</th>
                             <th>Filesize</th>
-                            <th>Speed <div style="float: right;" id="#datarate"><span>0</span>M/s</div></th>
+                            <th>Speed <div style="float: right;" id="datarate"><span>0</span>M/s</div></th>
                             <th style="width:10%">Time Left</th>
                         </tr>
                     </thead>

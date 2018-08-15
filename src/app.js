@@ -111,7 +111,7 @@ $(document).ready(function() {
                     var $table = $('#' + i);
                     $table.find('tbody').empty().append(bodyContent); 
                 }
-                $('#datarate').find('span').empty().append(totalDatarate);
+                $('#datarate').find('span').text( totalDatarate );
         });
     }
     update();
