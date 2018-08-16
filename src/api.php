@@ -8,7 +8,8 @@ foreach (new DirectoryIterator("/json") as $json) {
         $jsonArray[$file->status][$file->filebase] = array(
                                                         "GDSA"=>$file->gdsa,
                                                         "filedir"=>$file->filedir,
-                                                        "filebase"=>$file->filebase
+                                                        "filebase"=>$file->filebase,
+                                                        "filesize"=>$file->filesize
                                                     );
         if($file->status == "uploading") {
             $log = tailCustom($file->logfile, 6);

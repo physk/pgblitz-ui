@@ -19,13 +19,14 @@
                         <tr>
                             <th>File</th>
                             <th>Path</th>
+                            <th>Size</th>
                             <th>GDSA</th>
                             <th>Destination</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="text-muted" colspan="4">No entries found.</td>
+                            <td class="text-muted" colspan="5">No entries found.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -41,13 +42,14 @@
                             <th>Filename</th>
                             <th>GDSA</th>
                             <th>Progress bar</th>
-                            <th>Speed</th>
+                            <th>Filesize</th>
+                            <th>Speed <div style="float: right;" id="datarate"><span>0</span>M/s</div></th>
                             <th style="width:10%">Time Left</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="text-muted" colspan="5">No entries found.</td>
+                            <td class="text-muted" colspan="6">No entries found.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -79,13 +81,14 @@
                     <thead>
                         <tr>
                             <th>Filename</th>
+                            <th>Filesize</th>
                             <th>GDSA</th>
                             <th>Time spent</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="text-muted" colspan="3">No entries found.</td>
+                            <td class="text-muted" colspan="4">No entries found.</td>
                         </tr>
                     </tbody>
                 </table>
